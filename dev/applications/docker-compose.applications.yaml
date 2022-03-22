@@ -2,7 +2,7 @@ version: "3"
 services:
   pod_health:
     container_name: pod_health
-    image: registry.gitlab.com/panupong.dev.web/gitops-application-builder:15282cd
+    image: registry.gitlab.com/panupong.dev.web/gitops-application-builder:953adc6
     environment:
       - PORT=3000
     ports:
