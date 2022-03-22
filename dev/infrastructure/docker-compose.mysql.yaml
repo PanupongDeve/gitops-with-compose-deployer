@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    ports:
+      - "4306:3306"
+
+
+networks:
+  default:
+    external:
+      name: applications_dev

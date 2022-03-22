@@ -1,0 +1,23 @@
+#!/bin/sh
+if [ -f .env ]
+then
+  export $(cat .env | sed 's/#.*//g' | xargs)
+fi
+
+
+echo "------------> Delete Applications..."
+# docker-compose -f ./applications/*.yaml down
+
+echo "------------> Delete Infrastructure..."
+if [ "$nginx" = "1" ];then
+docker-compose -f ./infrastructure/docker-compose.web-server.yaml down
+fi
+
+if [ "$mysql" = "1" ];then
+docker-compose -f ./infrastructure/docker-compose.mysql.yaml down
+fi
+
+echo "------------> Delete Network..."
+./netowork.delete.sh
+
+
