@@ -19,3 +19,7 @@ fi
 
 echo "------------> Create Applications..."
 # docker-compose -f ./applications/*.yaml up -d
+
+if [ "$pod_health" = "1" ];then
+docker-compose -f ./applications/docker-compose.applications.yaml up -d
+fi

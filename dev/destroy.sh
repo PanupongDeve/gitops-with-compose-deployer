@@ -8,6 +8,11 @@ fi
 echo "------------> Delete Applications..."
 # docker-compose -f ./applications/*.yaml down
 
+if [ "$pod_health" = "1" ];then
+docker-compose -f ./applications/docker-compose.applications.yaml down
+fi
+
+
 echo "------------> Delete Infrastructure..."
 if [ "$nginx" = "1" ];then
 docker-compose -f ./infrastructure/docker-compose.web-server.yaml down

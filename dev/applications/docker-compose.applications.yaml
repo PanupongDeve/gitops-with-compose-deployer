@@ -1,0 +1,16 @@
+version: "3"
+services:
+  pod_health:
+    container_name: pod_health
+    image: panupongdeve/node-pods-research:v0.0.1
+    environment:
+      - PORT=3000
+    ports:
+      - "4600:3000"
+    
+
+
+networks:
+  default:
+    external:
+      name: applications_dev
