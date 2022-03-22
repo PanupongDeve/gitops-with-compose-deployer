@@ -2,7 +2,7 @@ version: "3"
 services:
   pod_health:
     container_name: pod_health
-    image: panupongdeve/node-pods-research:v0.0.1
+    image: registry.gitlab.com/panupong.dev.webb/gitops-application-builder:f9523ad
     environment:
       - PORT=3000
     ports:
