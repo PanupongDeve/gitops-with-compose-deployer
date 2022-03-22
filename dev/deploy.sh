@@ -1,8 +1,11 @@
 #!/bin/sh
-if [ -f .env ]
+if [ -f .env.config ]
 then
-  export $(cat .env | sed 's/#.*//g' | xargs)
+  export $(cat .env.config| sed 's/#.*//g' | xargs)
 fi
+
+echo "------------> Login Container Registry"
+docker login registry.gitlab.com -u $GITLAB_USERNAME  -p $GITLAB_PAT
 
 echo "------------> Create Network..."
 ./netowork.create.sh

@@ -1,7 +1,7 @@
 #!/bin/sh
-if [ -f .env ]
+if [ -f .env.config ]
 then
-  export $(cat .env | sed 's/#.*//g' | xargs)
+  export $(cat .env.config | sed 's/#.*//g' | xargs)
 fi
 
 
